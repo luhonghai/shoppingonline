@@ -4,6 +4,8 @@ import org.junit.Test;
 import uk.ac.gre.cw.shoppingonline.jdo.dao.ICustomerDAO;
 import uk.ac.gre.cw.shoppingonline.jdo.dao.exception.DAOException;
 import uk.ac.gre.cw.shoppingonline.jdo.entities.Customer;
+import uk.ac.gre.cw.shoppingonline.jdo.entities.Product;
+import uk.ac.gre.cw.shoppingonline.service.ProductService;
 
 import java.util.Collection;
 
@@ -11,43 +13,30 @@ import java.util.Collection;
  * Created by luhonghai on 12/4/14.
  */
 public class TestUserDao {
-//    @Test
-//    public void testCreateUser() {
-//        ICustomerDAO userDAO = new CustomerDao();
-//        Customer u = new Customer();
-//        u.setName("Hai Lu");
-//        try {
-//            userDAO.save(u);
-//        } catch (DAOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        u = new Customer();
-//        u.setName("Long Nguyen");
-//        try {
-//            userDAO.save(u);
-//        } catch (DAOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    @Test
-//    public void testDeleteUser() {
-//        ICustomerDAO userDAO = new CustomerDao();
-//        try {
-//            userDAO.delete(new Long(1));
-//        } catch (DAOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    @Test
-//    public void testListUser() {
-//        ICustomerDAO userDAO = new CustomerDao();
-//        Collection<Customer> users = userDAO.findAll();
-//        System.out.println("Found " + users.size() + " users");
-//        for (Customer u : users) {
-//            System.out.println("#" + u.getId() + ". Name: " + u.getName());
-//        }
-//    }
+    @Test
+    public void testInitDatabase() {
+        ProductService productService = new ProductService();
+        if (productService.isEmpty()) {
+            for (int i = 1; i <= 6; i++) {
+                Product product = new Product();
+                product.setName("Easy Polo Black Edition");
+                product.setUnitPrice(56 + i);
+                product.setImageUrl("images/home/product" + i + ".jpg");
+                if (i == 4) product.setNew(true);
+                if (i == 5) product.setSale(true);
+                product.setFeatured(true);
+                productService.create(product);
+            }
+
+            for (int i = 1; i <= 3; i++) {
+                Product product = new Product();
+                product.setName("Easy Polo Black Edition");
+                product.setUnitPrice(56 + i);
+                product.setImageUrl("images/home/recommend" + i + ".jpg");
+                product.setRecommended(true);
+                productService.create(product);
+            }
+        }
+    }
+
 }

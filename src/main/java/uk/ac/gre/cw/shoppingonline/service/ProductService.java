@@ -14,7 +14,7 @@ public class ProductService {
 
     private IProductDAO productDAO = new ProductDao();
 
-    public Collection<Product> listAll() {
+    public Collection<Product> findAll() {
         return productDAO.findAll();
     }
 
@@ -28,4 +28,11 @@ public class ProductService {
         }
         return false;
     }
+
+    public boolean isEmpty() {
+        Collection<Product> products = productDAO.findAll();
+        return (!(products!= null &&!products.isEmpty()));
+    }
+
+
 }
