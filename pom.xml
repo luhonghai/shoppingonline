@@ -64,11 +64,19 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
-
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
     <build>
-        <finalName>shoppingonline</finalName>
+        <finalName>tomis</finalName>
         <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -81,10 +89,10 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>[3.2.0-m1, 3.2.99)</version>
+                <version>4.0.0-release</version>
                 <configuration>
                     <fork>false</fork>
-                    <mappingIncludes>uk/ac/gre/cw/shoppingonline/model/*.class</mappingIncludes>
+                    <mappingIncludes>uk/ac/gre/cw/shoppingonline/jdo/entities/*.class</mappingIncludes>
                     <api>JDO</api>
                     <persistenceUnit>DPU</persistenceUnit>
                 </configuration>

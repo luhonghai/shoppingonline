@@ -18,6 +18,18 @@
         <to>/login.jsp</to>
     </rule>
     <rule>
+        <from>^/user/login</from>
+        <to>/user/login.jsp</to>
+    </rule>
+    <rule>
+        <from>^/user/logout</from>
+        <to>/user/logout.jsp</to>
+    </rule>
+    <rule>
+        <from>^/user/create</from>
+        <to>/user/create.jsp</to>
+    </rule>
+    <rule>
         <from>^/shop</from>
         <to>/shop.jsp</to>
     </rule>

@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="shopper-info">
-                        <p>Shopper Information</p>
+                        <p>Tomis Information</p>
                         <form>
                             <input type="text" placeholder="Display Name">
                             <input type="text" placeholder="User Name">

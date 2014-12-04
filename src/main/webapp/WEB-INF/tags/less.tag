@@ -1,10 +1,10 @@
 <%@tag description="Less footer" pageEncoding="UTF-8" %>
 <%@taglib prefix="include" tagdir="/WEB-INF/tags/includes" %>
-<%@attribute name="title" required="true" %>
+<%@attribute name="pageTitle" required="true" %>
 <!DOCTYPE html>
 <html lang="en">
 <include:head>
-    <jsp:attribute name="title">${title}</jsp:attribute>
+    <jsp:attribute name="pageTitle"><%=pageTitle%></jsp:attribute>
 </include:head>
 <body>
 <jsp:doBody/>

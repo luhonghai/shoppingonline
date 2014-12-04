@@ -2,7 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="section" tagdir="/WEB-INF/tags/layouts/sections" %>
 <%@taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<t:main title="Shopping online">
+<t:main pageTitle="Shopping online">
 	<section:advertisement></section:advertisement>
 	<section>
 		<div class="container">
